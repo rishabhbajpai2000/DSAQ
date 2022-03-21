@@ -12,9 +12,7 @@ class Solution {
             post = post*nums[i];
             postfix[i] =post;
         }
-        System.out.println(Arrays.toString(prefix));
-        System.out.println();
-        System.out.println(Arrays.toString(postfix));
+        
         for (int i = 0; i < nums.length; i++) {
             if (i == 0){
                 nums[i] = postfix[1];
