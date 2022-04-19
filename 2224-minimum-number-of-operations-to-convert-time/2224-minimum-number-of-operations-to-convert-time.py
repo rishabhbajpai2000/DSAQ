@@ -1,13 +1,10 @@
-from datetime import datetime
-# calculating the time difference
-def time_diff(initial, final):
-        time_i = datetime.strptime(initial, "%H:%M")
-        time_f = datetime.strptime(final, "%H:%M")
-        time_d = time_f - time_i
-        return time_d.seconds
+
 class Solution:
     def convertTime(self, current: str, correct: str) -> int:
-        time_d = time_diff(current, correct)//60 ## the difference would be in mins
+        current_time = 60 * int(current[0:2]) + int(current[3:5]) # Current time in minutes
+        target_time = 60 * int(correct[0:2]) + int(correct[3:5]) # Current time in minutes
+        time_d = target_time - current_time # Difference b/w current and target times in minutes
+
         rounds = 0
         while(time_d != 0):
             if (time_d >= 60):
