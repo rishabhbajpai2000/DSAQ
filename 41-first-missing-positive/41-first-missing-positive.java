@@ -1,21 +1,21 @@
 class Solution {
     public int firstMissingPositive(int[] nums) {
-        //making a hash table and inputting every positive element in that
-        int[] hash = new int[nums.length+1];
+        int i, n = nums.length;
         
-        for(int elem:nums){
-            if(elem>=0 && elem<= nums.length){
-                hash[elem] = 1;
-            }
+        for(i=0; i<n; i++){
+           if((i+1) != nums[i]){
+               if(nums[i]<1 || nums[i]>n || nums[i] == nums[nums[i]-1]) continue;
+               else{
+                   int t = nums[nums[i]-1];
+                   nums[nums[i]-1] = nums[i];
+                   nums[i] = t;
+                   i--;
+               }
+           }
         }
         
-        // now checking for missing element from the hash table
-        for(int i = 1; i<hash.length;i++){
-            if (hash[i] != 1){
-                return i;
-            }
-        }
-        return hash.length;
+        for(i=0; i<n && (i+1 == nums[i]); i++);
         
+        return i+1;
     }
 }
