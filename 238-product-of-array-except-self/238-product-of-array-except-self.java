@@ -1,8 +1,10 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
         int[] prefix = new int[nums.length];
+        
         int pre = 1;
         int post = 1;
+        
         int[] postfix = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             pre =  pre*nums[i];
