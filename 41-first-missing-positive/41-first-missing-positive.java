@@ -1,6 +1,6 @@
 class Solution {
     public int firstMissingPositive(int[] nums) {
-        //making a hash table and inputting every element in that
+        //making a hash table and inputting every positive element in that
         int[] hash = new int[nums.length+1];
         
         for(int elem:nums){
