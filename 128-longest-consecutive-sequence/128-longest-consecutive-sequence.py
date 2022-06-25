@@ -1,13 +1,3 @@
-def chain_l(s,elem):
-        l = 0
-        while True:
-            if elem in s:
-                l+= 1
-                elem += 1
-            else:
-                return l
-        return l
-    
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         s = set(nums)
@@ -15,7 +5,10 @@ class Solution:
         
         for elem in nums:
             if elem-1 not in s:
-                max_len = max(max_len, chain_l(s, elem))
+                length = 0
+                while (elem+length) in s:
+                    length+=1
+                max_len = max(max_len,length)
         
         return max_len
                 
