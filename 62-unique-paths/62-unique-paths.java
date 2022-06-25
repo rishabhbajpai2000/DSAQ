@@ -13,10 +13,6 @@ class Solution {
             }
         }
         
-        // printing out the array to test the results.
-        for(int[] elem: arr)
-            System.out.println(Arrays.toString(elem));
-        
         return arr[0][0];
     }
 }
