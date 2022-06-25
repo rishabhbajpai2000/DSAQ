@@ -16,11 +16,13 @@ class Solution:
             else: 
                 c2-=1
                 c1-=1
+        l = len(nums)//3
         # we cant be sure if the num1 and num2 are majority or not 
-        if nums.count(num1) <= len(nums)//3:
+        if nums.count(num1) <= l:
             num1 = "P"
-        if nums.count(num2) <= len(nums)//3:
+        if nums.count(num2) <= l:
             num2 = "P"
+            
         ans = set()
         if num1 != "P":
             ans.add(num1)
