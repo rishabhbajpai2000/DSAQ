@@ -10,32 +10,12 @@
  */
 class Solution {
     public int getDecimalValue(ListNode head) {
-        ListNode temp = head;
-        // calculating the size of list
-        int size = 1;
-        while (temp.next != null){
-            temp = temp.next;
-            size++;
+        int sum = 0;
+        while (head!= null){
+            sum *= 2;
+            sum += head.val;
+            head = head.next;
         }
-        System.out.println("size = " + size);
-        // calculating the value as 2 ^size
-        int pow = 1;
-        for (int i = 1; i<size;i++){
-            pow *= 2;
-        }
-        // System.out.println("power = " + pow);
-        temp =head;
-        int ans = 0;
-        while (size >0){
-            ans += pow * temp.val;
-            // System.out.println("ans = "+ ans);
-            // System.out.println("temp.val = "+ temp.val);
-            pow /= 2;
-            size--;
-            temp = temp.next;
-            // System.out.println("power = " + pow);
-        }
-        return ans;
-        
+        return sum;
     }
 }
