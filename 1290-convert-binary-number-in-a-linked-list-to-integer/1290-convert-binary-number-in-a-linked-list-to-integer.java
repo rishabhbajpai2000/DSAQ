@@ -23,17 +23,17 @@ class Solution {
         for (int i = 1; i<size;i++){
             pow *= 2;
         }
-        System.out.println("power = " + pow);
+        // System.out.println("power = " + pow);
         temp =head;
         int ans = 0;
         while (size >0){
             ans += pow * temp.val;
-            System.out.println("ans = "+ ans);
-            System.out.println("temp.val = "+ temp.val);
+            // System.out.println("ans = "+ ans);
+            // System.out.println("temp.val = "+ temp.val);
             pow /= 2;
             size--;
             temp = temp.next;
-            System.out.println("power = " + pow);
+            // System.out.println("power = " + pow);
         }
         return ans;
         
