@@ -12,21 +12,21 @@ class Solution {
         
         
         // going to the node just before the node which we need to delete. . 
-        temp = head;
+        ListNode L_B_D = head; // lbd =  last before delete
         int ind = l-n-1;     
         
         if(ind>=0){
             for (int i = 0; i<ind ;i++)
-                temp = temp.next;
+                L_B_D = L_B_D.next;
         
-        if (temp.next != null) 
-            temp.next = temp.next.next;
+        if (L_B_D.next != null) 
+            L_B_D.next = L_B_D.next.next;
         
         return head;
         }
         else{
-            if (temp.next != null)
-                return temp.next;
+            if (L_B_D.next != null)
+                return L_B_D.next;
             else
                 return null;
         }        
