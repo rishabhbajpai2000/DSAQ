@@ -1,15 +1,10 @@
 class Solution:
     def balancedStringSplit(self, s: str) -> int:
-        count = 0
-        balanced = 0
+        score, count = 0,0
         for i in s:
-            if i == "R":
-                count += 1
-            else:
-                count -= 1
-            if count == 0:
-                balanced += 1
-        return balanced
+            score += 1 if i == "R" else -1
+            count += 1 if score == 0 else 0
+        return count
 #         l = len(s)
 #         count = 0
 #         for i in range(l):
