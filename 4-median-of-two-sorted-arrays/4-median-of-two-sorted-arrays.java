@@ -7,6 +7,7 @@ class Solution {
         int j = n-1; // second array last index
         int k = m+n-1; // merged array's last index
         
+        // making a new merged array 
         while (i>=0 && j>=0){
             int first = nums1[i];
             int second = nums2[j];
@@ -31,8 +32,9 @@ class Solution {
             i--;
         }
         
+        
         int len = merged.length;
-        k = merged.length -1;
+        k = len -1;
         double median = 0;
         if (len%2 == 0){
             median = (merged[k/2] + merged[k/2 + 1]);
