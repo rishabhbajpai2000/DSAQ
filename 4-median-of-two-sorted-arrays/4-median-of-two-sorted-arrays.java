@@ -31,12 +31,10 @@ class Solution {
             i--;
         }
         
-        System.out.println(Arrays.toString(merged));
         int len = merged.length;
         k = merged.length -1;
         double median = 0;
         if (len%2 == 0){
-            System.out.println(merged[k/2] + " " + merged[k/2 + 1]);
             median = (merged[k/2] + merged[k/2 + 1]);
             median /= 2;
             return median;
