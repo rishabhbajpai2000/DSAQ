@@ -9,6 +9,7 @@ class Solution {
         if (i == nums.length) {
             if (sum == target) 
                 return 1;
+            if (sum >target) return 0;
             return 0;
         }
 
