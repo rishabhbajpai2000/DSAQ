@@ -13,7 +13,6 @@ class Solution {
             }
             else check[pos_in_check] += i;
         }
-        System.out.println(Arrays.toString(check));
         for(int i = 0; i<check.length; i++)
             if (occurance[i] == -1 && check[i] != distance[i]) return false;
         return true;
