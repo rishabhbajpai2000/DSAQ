@@ -16,7 +16,6 @@ class Solution {
            current_pos++; 
         }
         current_pos %= arraylist.size();
-        System.out.println("Element to be removed is : " + arraylist.get(current_pos));
         arraylist.remove(current_pos);
         return helper(arraylist, k, current_pos);
 
