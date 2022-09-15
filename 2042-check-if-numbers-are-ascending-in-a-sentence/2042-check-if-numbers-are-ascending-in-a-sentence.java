@@ -8,7 +8,6 @@ class Solution {
             if (isNumeric(str)) nums.add(Integer.parseInt(str)); 
         }
         
-        System.out.println(nums);
         int l = nums.size();
         for (int i = 0; i < l-1; i++) {
             if (nums.get(i) >= nums.get(i + 1))
