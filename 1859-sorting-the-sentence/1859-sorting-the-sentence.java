@@ -1,20 +1,31 @@
 class Solution {
     public String sortSentence(String s) {
+        
+        // splitting the string
+        String[] a = s.split(" ");
+        
+        // making a string array
+        String[] ans_Arr = new String[a.length];
 
-        int l = s.length();
-        String arr[] = s.split(" ");
-        String ans[]=new String[arr.length];
+
+        for(int i = 0; i<a.length; i++){
+
+            String elem = a[i];
+            String substring = a[i].substring(0, a[i].length()-1);
+            char num = elem.charAt(elem.length()-1);
+            int index = Character.getNumericValue(num);
             
-        for (int i = 0; i < arr.length; i++) {
-            String words = arr[i];
-            int len = words.length();
-            ans[Character.getNumericValue(words.charAt(len - 1))-1] = words.substring(0, len-1);
-
+    
+            ans_Arr[index-1] = substring;
         }
-        String str = "";
-        for (int i = 0; i < ans.length; i++) {
-            str = str + ans[i] + " ";
+        
+        // making the answer string
+        StringBuilder ans = new StringBuilder();
+        for (int i = 0; i< ans_Arr.length;i++){
+            ans.append(ans_Arr[i] + " ");
         }
-        return str.substring(0, str.length()-1);
+        String ans_f = ans.substring(0, ans.length()-1);
+        return ans_f;
+        
     }
 }
