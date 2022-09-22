@@ -22,11 +22,12 @@ class Solution {
             else i++;
         }
         
-        StringBuilder sb = new StringBuilder();
-        for (i = 0; i < arr.length; i++) {
-            sb.append(arr[i]);
-        }
+//         StringBuilder sb = new StringBuilder();
+//         for (i = 0; i < arr.length; i++) {
+//             sb.append(arr[i]);
+//         }
         
-        return sb.toString();
+        String ans = new String(arr);
+        return ans;
     }
 }
