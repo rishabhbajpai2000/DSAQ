@@ -17,22 +17,13 @@ class Solution {
                 i++;
                 j--;
             }
-            else if(set.contains(arr[i]))
-            {
-                j--;
-            }
-            else
-            {
-                i++;
-            }
-            
+            else if(set.contains(arr[i])) j--;
+            else i++;
         }
         
         String m = "";
-        for(int k = 0;k<s.length();k++)
-        {
-            m = m + arr[k];
-        }
+        for(int k = 0;k<s.length();k++)m = m + arr[k];
+        
         return m;
     }
 }
