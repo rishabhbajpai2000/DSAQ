@@ -6,6 +6,7 @@ class Solution {
         HashSet<Character> set = new HashSet<>();
         char[] c = {'a','e','i','o','u','A','E','I','O','U'};
         for(char ch:c) set.add(ch);
+
         
         while(i<j)
         {
@@ -21,9 +22,11 @@ class Solution {
             else i++;
         }
         
-        String m = "";
-        for(int k = 0;k<s.length();k++)m = m + arr[k];
+        StringBuilder sb = new StringBuilder();
+        for (i = 0; i < arr.length; i++) {
+            sb.append(arr[i]);
+        }
         
-        return m;
+        return sb.toString();
     }
 }
