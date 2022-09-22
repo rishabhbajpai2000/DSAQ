@@ -4,16 +4,8 @@ class Solution {
         int j = s.length()-1;
         char[] arr = s.toCharArray();
         HashSet<Character> set = new HashSet<>();
-        set.add('a');
-        set.add('e');
-        set.add('i');
-        set.add('o');
-        set.add('u');
-        set.add('A');
-        set.add('E');
-        set.add('I');
-        set.add('O');
-        set.add('U');
+        char[] c = {'a','e','i','o','u','A','E','I','O','U'};
+        for(char ch:c) set.add(ch);
         
         while(i<j)
         {
