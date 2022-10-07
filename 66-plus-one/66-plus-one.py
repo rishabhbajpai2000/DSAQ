@@ -9,9 +9,10 @@ class Solution:
                 s += str(i)
             s = int(s)
             s+= 1
-            print(s)
+            
             s = str(s)
             ans = []
             for i in s:
                 ans.append(int(i))
+                
             return ans
