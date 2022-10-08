@@ -1,31 +1,35 @@
 class Solution {
     public int minFallingPathSum(int[][] matrix) {
+        // we are calculating the dp array
         int n = matrix.length;
-        int[][] dp = new int[n][n];
-        int row = 0;
+        int[] dp = new int[n];
+
         for(int col = 0; col < n;col ++ )
-            dp[row][col] = matrix[row][col];
+            dp[col] = matrix[0][col];
         
-        for(row = 1;row<n;row++){
+        // any element in the dp array will be sum of its matrix counter part as well as
+        // minimum of upper left upper right and upper directly 
+        for(int row = 1;row<n;row++){
+            int[] temp = new int[n];
+            
             for(int col = 0;col<n;col++){
-                int ul = 214748364;
-                int ur = 214748364;
+                int ul = 214748364;                
+                if (col>0) ul = dp[col-1];
                 
-                if (col>0) ul = dp[row-1][col-1];
-                int u = dp[row-1][col];
-                if (col<n-1) ur = dp[row-1][col+1];
+                 int ur = 214748364;
+                if (col<n-1) ur = dp[col+1];
                 
-                dp[row][col] = matrix[row][col] + Math.min(ul, Math.min(u, ur));
+                int u = dp[col];
+                
+                temp[col] = matrix[row][col] + Math.min(ul, Math.min(u, ur));
             }
+            
+            for (int col = 0; col<n;col++) dp[col] = temp[col];
         }
         
-        row = n-1;
-        int m = dp[row][0];
-        for (int col = 0; col<n;col++)
-            m = Math.min(m, dp[row][col]);
-        
-
-        
+        // The answer will be minimum of last row of dp array 
+        int m = dp[0];
+        for (int elem: dp) m = Math.min(m, elem);
         return m;
     }
     
