@@ -1,33 +1,33 @@
 class Solution {
     public int minFallingPathSum(int[][] matrix) {
-        
-        int[][] dp = new int[matrix.length][matrix.length];
-        for(int[] arr: dp)Arrays.fill(arr, -1);
-        
-        int mini = 214748364;
+        int n = matrix.length;
+        int[][] dp = new int[n][n];
         int row = 0;
+        for(int col = 0; col < n;col ++ )
+            dp[row][col] = matrix[row][col];
         
-        for (int col = 0; col<matrix.length; col++)
-            mini = Math.min(mini, helper(dp, matrix, row, col));
+        for(row = 1;row<n;row++){
+            for(int col = 0;col<n;col++){
+                int ul = 214748364;
+                int ur = 214748364;
+                
+                if (col>0) ul = dp[row-1][col-1];
+                int u = dp[row-1][col];
+                if (col<n-1) ur = dp[row-1][col+1];
+                
+                dp[row][col] = matrix[row][col] + Math.min(ul, Math.min(u, ur));
+            }
+        }
         
-        return mini;
+        row = n-1;
+        int m = dp[row][0];
+        for (int col = 0; col<n;col++)
+            m = Math.min(m, dp[row][col]);
+        
+
+        
+        return m;
     }
     
-    int helper(int[][] dp, int[][] matrix, int row, int col){
-        if (row == matrix.length - 1)
-            return matrix[row][col];
 
-        if (dp[row][col] != -1)
-            return dp[row][col];
-
-        int u_u = matrix[row][col] + helper(dp, matrix, row + 1, col);
-        int u_l = 21474836;
-        if (col>0) u_l = matrix[row][col] + helper(dp, matrix, row + 1, col - 1);
-        int u_r = 21474836;
-        if (col<matrix.length-1) u_r = matrix[row][col] + helper(dp, matrix, row + 1, col + 1);
-
-        return dp[row][col] = Math.min(u_l, Math.min(u_u, u_r));
-        
-        
-    }
 }
