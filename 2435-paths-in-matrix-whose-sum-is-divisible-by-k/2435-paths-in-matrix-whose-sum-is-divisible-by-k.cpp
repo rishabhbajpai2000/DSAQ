@@ -12,8 +12,8 @@ public:
         if(dp[i][j][sum%k]!=-1)
             return dp[i][j][sum%k];
         
-        int left = memo(a,i,j-1,(sum+a[i][j])%k,k,dp)%mod;
-        int right = memo(a,i-1,j,(sum+a[i][j])%k,k,dp)%mod;
+        int left = memo(a,i,j-1,(sum+a[i][j])%k,k,dp);
+        int right = memo(a,i-1,j,(sum+a[i][j])%k,k,dp);
         return dp[i][j][sum%k] = (left+right)%mod;
         
     }
