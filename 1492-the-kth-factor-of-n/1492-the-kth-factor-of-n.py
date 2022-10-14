@@ -5,6 +5,5 @@ class Solution:
             if n%i == 0:
                 factors.append(i)
         factors.append(n)
-        print(factors)
         if len(factors) > k-1: return factors[k-1]
         return -1
