@@ -4,11 +4,8 @@ class Solution:
         
         def subsets(index, current):
             if index == len(nums):
-                if current in results:
-                    return 
-                else:
-                    results.append(current.copy())
-                    return 
+                results.append(current.copy())
+                return 
             
             current.append(nums[index])
             subsets(index+1, current)
