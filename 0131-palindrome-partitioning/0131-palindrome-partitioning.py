@@ -3,7 +3,7 @@ class Solution:
         res, part = [], []
         
         def dfs(i):
-            if i == len(s):
+            if i >= len(s):
                 res.append(part.copy())
                 return 
             for j in range(i, len(s)):
