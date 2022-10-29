@@ -17,5 +17,5 @@ class Solution:
                 if edit(i, j): 
                     answers.append(i)
                     break
-        # answers = list(answers)
+
         return answers
