@@ -3,7 +3,7 @@ class Solution:
         count = 0
         s = 0
         for i in nums:
-            if i%3 == 0 and i%2 == 0:
+            if i%6 == 0:
                 count += 1
                 s += i
         if count!= 0:
