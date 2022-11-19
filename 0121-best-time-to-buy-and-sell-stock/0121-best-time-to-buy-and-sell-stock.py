@@ -9,7 +9,7 @@ class Solution:
                 minima.append(prices[i])
             else:
                 minima.append(minima[i-1])
-        print(minima)
+        
         global_profit = 0
         for i in range(len(prices)):
             profit = prices[i]-minima[i]
