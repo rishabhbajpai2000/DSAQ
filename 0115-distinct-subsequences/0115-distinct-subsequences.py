@@ -7,15 +7,8 @@ class Solution:
             if j<0: return 1
             if i<0: return 0
             
-            
-
-            
             if s[i] == t[j]:
- 
                 return helper(i-1,j-1) + helper(i-1,j)
-
-            
- 
             return helper(i-1,j)
 
         
