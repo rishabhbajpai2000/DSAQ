@@ -8,15 +8,15 @@ class Solution:
             if i<0: return 0
             
             
-            # if dp[i][j] != -1: return dp[i][j]
+
             
             if s[i] == t[j]:
-                # dp[i][j] = 
+ 
                 return helper(i-1,j-1) + helper(i-1,j)
-                # return dp[i][j]
+
             
-            # dp[i][j] = 
+ 
             return helper(i-1,j)
-            # return dp[i][j]
+
         
         return helper(len(s)-1,len(t)-1)
