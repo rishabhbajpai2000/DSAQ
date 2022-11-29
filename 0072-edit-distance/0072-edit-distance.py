@@ -1,27 +1,20 @@
 class Solution:
+
     def minDistance(self, word1: str, word2: str) -> int:
         l1 = len(word1)-1
         l2 = len(word2)-1
         
-        dp = []
-        # creating a dp array
-        for i in range(l1+1):
-            local = []
-            for j in range(l2+1):
-                local.append(-1)
-            dp.append(local)
-            
-        def helper(i, j):
-            if i<0: return j+1
-            if j<0: return i+1
-            if dp[i][j] != -1: return dp[i][j]
-            
-            if word1[i] == word2[j]: 
-                dp[i][j] = helper(i-1,j-1)
-                return dp[i][j] 
-            
-            dp[i][j] =  1 + + min(helper(i-1, j), helper(i,j-1), helper(i-1, j-1))
-            return dp[i][j]
+        dp = [[-1] * (l2+1) for _ in range(l1+1)]
+        
+        def helper(l1,l2):
+            if l1<0: return l2 +1
+            if l2 < 0: return l1 + 1
+            if dp[l1][l2] != -1: return dp[l1][l2]
+            if word1[l1] == word2[l2]:
+                dp[l1][l2]=helper(l1-1, l2-1)
+                return dp[l1][l2]
+            dp[l1][l2]= 1 + min(helper(l1-1, l2), helper(l1, l2-1), helper(l1-1,l2-1))
+            return dp[l1][l2]
         
 
         return helper(l1, l2)
