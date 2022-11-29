@@ -1,11 +1,6 @@
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
-        dp = []
-        for i in range(len(s)):
-            local = []
-            for i in range(len(t)):
-                local.append(-1)
-            dp.append(local)
+        dp = [[-1] * len(t) for _ in range(len(s))]
         
         def helper(i, j):
             if j<0: return 1
