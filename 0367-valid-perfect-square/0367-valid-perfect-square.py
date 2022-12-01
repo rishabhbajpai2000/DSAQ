@@ -1,7 +1,10 @@
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
-        square_root = math.sqrt(num)
         
-        if square_root == int(square_root):
-            return True
+        i = 0
+        while i*i<=num:
+            if i*i == num:
+                return True
+            i+= 1
+        
         return False
