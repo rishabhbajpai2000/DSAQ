@@ -1,5 +1,4 @@
-from collections import OrderedDict
-import numpy as np
+
 class Solution:
     def frequencySort(self, s: str) -> str:
         freq = {}
