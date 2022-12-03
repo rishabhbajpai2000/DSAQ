@@ -7,11 +7,10 @@ class Solution:
                 freq[i] += 1
             else: 
                 freq[i] = 1
-        print(freq)
         sorted_dict = dict(sorted(freq.items(), key=lambda item: item[1]))
 
         ans = ""
-        print(sorted_dict)
+
         for i in sorted_dict:
             ans += i*freq[i]
         ans = ans[::-1]
