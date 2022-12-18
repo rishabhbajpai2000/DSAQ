@@ -15,7 +15,7 @@ class Solution:
         nums = []
         for i in words:
             nums.append(word2num(i))
-        print(nums)
+
         count = 0
         for i in range(len(nums)):
             for j in range(i + 1, len(nums)):
