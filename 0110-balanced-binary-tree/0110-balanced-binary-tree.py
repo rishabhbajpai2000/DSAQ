@@ -11,9 +11,9 @@ class Solution:
             if node == None: return 0
             
             leftheight = dfs(node.left)
-            if leftheight == -1: return -1
-            
             rightheight = dfs(node.right)
+            
+            if leftheight == -1: return -1
             if rightheight == -1: return -1
             
             if abs(leftheight - rightheight) > 1: return -1
