@@ -13,10 +13,7 @@ class Solution:
             leftheight = dfs(node.left)
             rightheight = dfs(node.right)
             
-            if leftheight == -1: return -1
-            if rightheight == -1: return -1
-            
-            if abs(leftheight - rightheight) > 1: return -1
+            if leftheight == -1 or rightheight == -1 or abs(leftheight - rightheight) > 1: return -1
             
             return max(leftheight, rightheight) + 1
         
