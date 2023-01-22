@@ -13,9 +13,8 @@ class Solution:
             if node.left == None and node.right == None:
                 return curlen
             
-            l, r = 0,0
-            if node.left != None: l = dfs(node.left, curlen + 1)
-            if node.right != None: r = dfs(node.right, curlen + 1)
+            l = 0 if node.left == None else dfs(node.left, curlen + 1)
+            r = 0 if node.right == None else dfs(node.right, curlen + 1)
                 
             return max(l, r)
         
