@@ -16,8 +16,7 @@ class Solution:
         for i in range(1, len(nums)-1):
             left_n = left(i, nums)
             right_n = right(i, nums)
-            if nums[i-1] == nums[i]: count += 0
-            elif left_n == -1 or right_n == -1: count += 0
+            if nums[i-1] == nums[i] or left_n == -1 or right_n == -1: count += 0
             elif left_n < nums[i] and right_n<nums[i]: 
                 count += 1
                 print(nums[i])
