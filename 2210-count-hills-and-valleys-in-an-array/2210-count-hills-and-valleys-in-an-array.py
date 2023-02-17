@@ -19,8 +19,6 @@ class Solution:
             if nums[i-1] == nums[i] or left_n == -1 or right_n == -1: continue
             elif left_n < nums[i] and right_n<nums[i]: 
                 count += 1
-                print(nums[i])
             elif left_n > nums[i] and right_n > nums[i]: 
                 count += 1
-                print(nums[i])
         return count
