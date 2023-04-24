@@ -42,7 +42,15 @@ class Solution {
       }
     }
       
-  reverseArray(nums, index+1);
+    int startIndex = index+1;
+    int endIndex = nums.length - 1;
+    while (startIndex < endIndex) {
+        int temp = nums[startIndex];
+        nums[startIndex] = nums[endIndex];
+        nums[endIndex] = temp;
+        startIndex++;
+        endIndex--;
+    }
 
   }
 
