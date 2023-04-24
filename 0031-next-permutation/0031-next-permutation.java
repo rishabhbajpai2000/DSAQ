@@ -10,7 +10,7 @@ class Solution {
         break;
       }
     } //correct
-    System.out.println(index);
+
       
       
     if (index == -1) { //reverse
@@ -33,17 +33,10 @@ class Solution {
         break;
       }
     }
-    System.out.println(Arrays.toString(nums));
+
       
-    // int z = l - 1; //reverse rest of the part
-    // for (int k = index + 1; k <= (l-index)/2; k++) {
-    //   int t = nums[k];
-    //   nums[k] = nums[z];
-    //   nums[z] = t;
-    //   z--;
-    // }
     Arrays.sort(nums, index+1,l);
       
-    System.out.println(Arrays.toString(nums));
+
   }
 }
