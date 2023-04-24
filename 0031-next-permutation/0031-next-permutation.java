@@ -42,19 +42,8 @@ class Solution {
       }
     }
       
-    // int z = l - 1; //reverse rest of the part
-    // int reversed()
-    // for (int k = index + 1; k <= (l-index)/2;k++) {
-    //   int t = nums[k];
-    //   nums[k] = nums[z];
-    //   nums[z] = t;
-    //   z--;
-    // }
+  reverseArray(nums, index+1);
 
-      reverseArray(nums, index+1);
-      // Arrays.sort(nums, index+1,l);
-      
-    System.out.println(Arrays.toString(nums));
   }
 
 }
