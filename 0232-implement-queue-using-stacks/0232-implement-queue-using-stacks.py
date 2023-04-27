@@ -19,7 +19,7 @@ class MyQueue:
             self.mainStack.append(self.secondStack[-1])
             self.secondStack.pop()
             
-        print(self.secondStack)
+        # print(self.secondStack)
         return toreturn
         
 
