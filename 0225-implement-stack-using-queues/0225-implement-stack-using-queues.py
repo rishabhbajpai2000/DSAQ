@@ -6,13 +6,10 @@ class MyStack:
         self.que_sec = Queue()
 
     def push(self, x: int) -> None:
-        while self.que_main.empty() != True:
-            self.que_sec.put(self.que_main.get())
-        
+        s = self.que_main.qsize()
         self.que_main.put(x)
-        
-        while (self.que_sec.empty() != True): 
-            self.que_main.put(self.que_sec.get())
+        for i in range(s): 
+            self.que_main.put(self.que_main.get())
         
 
     def pop(self) -> int:
