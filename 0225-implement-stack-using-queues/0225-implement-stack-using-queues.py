@@ -3,7 +3,6 @@ class MyStack:
 
     def __init__(self):
         self.que_main = Queue()
-        self.que_sec = Queue()
 
     def push(self, x: int) -> None:
         s = self.que_main.qsize()
