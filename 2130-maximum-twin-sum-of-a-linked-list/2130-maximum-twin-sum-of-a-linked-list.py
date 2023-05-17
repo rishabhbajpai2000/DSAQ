@@ -5,24 +5,24 @@
 #         self.next = next
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
-        
-        # counting the length of the list first. 
-        l = 1
-        dummy = head
-        while dummy.next!=None:
-            l += 1
-            dummy = dummy.next
-        maxsum = 0
-        cur_nod_ind = 1
-        stack = []
-        while head != None:
-            if cur_nod_ind < l//2 + 1:
-                stack.append(head.val)
-            else:
-                maxsum = max(stack.pop()+ head.val, maxsum)
-                
-            cur_nod_ind += 1
-            head = head.next
-                
+        slow, fast = head, head
+        maxVal = 0
 
-        return maxsum
+        # Get middle of linked list
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+
+        # Reverse second part of linked list
+        curr, prev = slow, None
+
+        while curr:       
+            curr.next, prev, curr = prev, curr, curr.next   
+
+        # Get max sum of pairs
+        while prev:
+            maxVal = max(maxVal, head.val + prev.val)
+            prev = prev.next
+            head = head.next
+
+        return maxVal
