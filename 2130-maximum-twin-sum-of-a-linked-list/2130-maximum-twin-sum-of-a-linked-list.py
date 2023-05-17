@@ -20,8 +20,7 @@ class Solution:
             if cur_nod_ind < l//2 + 1:
                 stack.append(dummy.val)
             else:
-                cursum = stack[-1] + dummy.val
-                maxsum = max(cursum, maxsum)
+                maxsum = max(stack[-1] + dummy.val, maxsum)
                 stack.pop()
                 
             cur_nod_ind += 1
