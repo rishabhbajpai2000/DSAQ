@@ -11,5 +11,4 @@ class Solution:
         while s.count("AB") >  0 or s.count("CD") > 0:
             first = max(s.find("AB"), s.find("CD"))
             s = s[:first] + s[first+2:]
-            print(s)
         return len(s)
