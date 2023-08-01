@@ -8,13 +8,16 @@ class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         global diameter
         diameter = 0
+        
         def height(node):
             if node == None: return 0
             lh = height(node.left)
             rh = height(node.right)
+            
             global diameter
-            diameter  = max(diameter, lh + rh)
-            return 1 + max(lh,rh)
+            diameter = max(diameter, lh + rh)
+            return 1 + max(lh,rh) 
+        
         
         height(root)
         return diameter
