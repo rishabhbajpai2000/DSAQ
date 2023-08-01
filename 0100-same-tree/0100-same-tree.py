@@ -11,7 +11,7 @@ class Solution:
             if node1 and node2:
                 if node1.val == node2.val:
                     return dfs(node1.left, node2.left) and dfs(node1.right, node2.right)
-            if node1 == None and node2 == None: return True
+            elif node1 == None and node2 == None: return True
             else: return False
             
         return dfs(p,q)
